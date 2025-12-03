@@ -1,0 +1,19 @@
+{% macro renderHeader(pageLabel, classname) %}
+
+<header class="bg-white shadow-md">
+  <nav class="container mx-auto p-4 flex justify-between items-center">
+    <!-- Sử dụng tham số pageLabel được truyền cục bộ -->
+    <div class="text-2xl font-extrabold text-indigo-600">
+      {% if pageLabel %} {{ pageLabel }} {% else %} {{ siteTitle }} {% endif %}
+    </div>
+    <div>
+      <!-- Vòng lặp sử dụng Global Data menuItems -->
+      {% for item in menuItems %}
+      <a href="{{ item.url }}" class="text-gray-600 hover:text-indigo-600 px-3"
+        >{{ item.name }}</a
+      >
+      {% endfor %}
+    </div>
+  </nav>
+</header>
+{% endmacro %}

@@ -1,0 +1,11 @@
+<footer class="bg-gray-800 text-white p-6 mt-12">
+  <div class="container mx-auto text-center">
+    <!-- Sử dụng biến currentYear -->
+    <p>&copy; {{ currentYear }} Dự Án Tĩnh. Tất cả các quyền được bảo lưu.</p>
+    <!-- Hiển thị thông tin môi trường -->
+    <p class="text-sm mt-2">
+      Component Footer được tái sử dụng. {% if isProduction %} (Đang ở Môi
+      trường Production) {% else %} (Đang ở Môi trường Development) {% endif %}
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,31 @@
+{
+  "name": "static-project-with-components",
+  "version": "1.0.0",
+  "description": "Dự án tĩnh với component reuse dùng Gulp và Nunjucks.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build"
+  },
+  "keywords": [
+    "html",
+    "scss",
+    "typescript",
+    "gulp",
+    "nunjucks"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/gulp-sass": "^6.0.0",
+    "dart-sass": "^1.25.0",
+    "gulp": "^4.0.2",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-sass": "^5.1.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "sass": "^1.94.2"
+  }
+}

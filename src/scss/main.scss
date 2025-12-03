@@ -1,0 +1,34 @@
+// THAY ĐỔI: Sử dụng @use với namespace 'vars' để truy cập các biến
+@use "variables" as vars;
+
+/* Định nghĩa các style chung */
+
+body {
+  background-color: vars.$color-primary;
+}
+
+// body {
+//   // Thay thế "Inter", sans-serif bằng CSS Custom Property
+//   font-family: var(--font-stack);
+
+//   // SỬA LỖI: Thay thế $color-primary bằng var(--color-primary) (Recommended)
+//   color: var(--color-primary);
+// }
+
+// .font-bold {
+//   font-weight: 700;
+// }
+
+// /* Ví dụ về custom style */
+// .container {
+//   max-width: 1200px;
+//   padding: var(--spacing-md);
+//   // SỬ DỤNG CSS CUSTOM PROPERTY
+//   border-left: 2px solid var(--color-primary);
+// }
+
+// .title {
+//   // VÍ DỤ: Truy cập SCSS Map TRỰC TIẾP (Nếu không dùng CSS Custom Property)
+//   // Cú pháp đúng: map-get(NAMESPACE.$VARIABLE, 'KEY')
+//   color: map-get(vars.$colors, "primary");
+// }

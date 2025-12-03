@@ -1,0 +1,64 @@
+
+
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Sử dụng biến siteTitle (Global Data) -->
+    <title>Dự Án Tĩnh Quy Mô Lớn (Component hóa)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body class="bg-gray-50 min-h-screen ">
+    <!--  -->
+    
+
+<header class="bg-white shadow-md">
+  <nav class="container mx-auto p-4 flex justify-between items-center">
+    <!-- Sử dụng tham số pageLabel được truyền cục bộ -->
+    <div class="text-2xl font-extrabold text-indigo-600">
+       TRANG CHỦ - APP ĐỘC LẬP 
+    </div>
+    <div>
+      <!-- Vòng lặp sử dụng Global Data menuItems -->
+      
+    </div>
+  </nav>
+</header>
+
+
+    <main class="container mx-auto p-4">
+      <h1 class="text-4xl font-bold mb-4">Trang Chủ Dự Án Tĩnh</h1>
+      <p>Nội dung chính của trang. Phần này được đóng gói từ các component.</p>
+
+      <!-- Đây là vị trí mà Nunjucks sẽ chèn nội dung của component header.html -->
+      <section class="mt-8">
+        <h2>Component Tái Sử Dụng</h2>
+        <div id="app-message" class="bg-indigo-100 p-4 rounded-lg shadow-md">
+          Đang chờ khởi tạo từ TypeScript...
+        </div>
+
+        
+    
+<div>about 01</div>
+<script src="/partials/about/about.js"></script>
+
+      </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 mt-12">
+  <div class="container mx-auto text-center">
+    <!-- Sử dụng biến currentYear -->
+    <p>&copy; 2025 Dự Án Tĩnh. Tất cả các quyền được bảo lưu.</p>
+    <!-- Hiển thị thông tin môi trường -->
+    <p class="text-sm mt-2">
+      Component Footer được tái sử dụng.  (Đang ở Môi trường Development) 
+    </p>
+  </div>
+</footer>
+
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
