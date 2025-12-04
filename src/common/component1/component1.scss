@@ -1,0 +1,5 @@
+@use "../../scss/variables" as vars;
+
+section.component1 {
+  color: vars.$color-primary;
+}
