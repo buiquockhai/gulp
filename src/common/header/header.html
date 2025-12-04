@@ -1,0 +1,7 @@
+{% macro render(pageLabel, classname) %}
+<header>
+  <p>This is header</p>
+  <p>{% if pageLabel %} {{ pageLabel }} {% else %} {{ siteTitle }} {% endif %}</p>
+</header>
+
+{% endmacro %}

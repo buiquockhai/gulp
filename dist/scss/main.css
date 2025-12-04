@@ -1,5 +1,9 @@
-@charset "UTF-8";
-/* Định nghĩa các style chung */
 body {
-  background-color: #4f46e5;
+  background-color: #363434;
+  font-size: 2rem;
+}
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 3.25rem;
+  }
 }

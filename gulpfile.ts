@@ -12,7 +12,7 @@ const paths = {
   dist: "dist",
   html: {
     src: "src/**/*.html",
-    partials: "src/partials", // Thư mục chứa các component nguồn
+    partials: ["src"], // Thư mục chứa các component nguồn
     pages: ["src/**/*.html"], // Chỉ lấy các trang chính
   },
   styles: {
@@ -51,7 +51,7 @@ function html() {
     .src(paths.html.pages)
     .pipe(
       nunjucksRender({
-        path: [paths.html.partials],
+        path: paths.html.partials,
         // THAY ĐỔI QUAN TRỌNG: Truyền đối tượng data vào đây
         data: globalData,
       })
@@ -66,25 +66,17 @@ function copyPartials() {
 
 // 2. Tác vụ biên dịch SCSS
 function styles() {
-  return gulp
-    .src(paths.styles.src)
-    .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest(paths.styles.dest));
+  return gulp.src(paths.styles.src).pipe(sass().on("error", sass.logError)).pipe(gulp.dest(paths.styles.dest));
 }
 
 // 3. Tác vụ biên dịch TypeScript
 function scripts() {
-  return tsProject
-    .src()
-    .pipe(tsProject())
-    .js.pipe(gulp.dest(paths.scripts.dest));
+  return tsProject.src().pipe(tsProject()).js.pipe(gulp.dest(paths.scripts.dest));
 }
 
 // 4. Tác vụ sao chép tài sản (Assets)
 function assets() {
-  return gulp
-    .src(paths.assets.src, { base: paths.src })
-    .pipe(gulp.dest(paths.dist));
+  return gulp.src(paths.assets.src, { base: paths.src }).pipe(gulp.dest(paths.dist));
 }
 
 // Tác vụ Watch cho chế độ phát triển (Development)
@@ -97,9 +89,7 @@ function watchFiles() {
 }
 
 // Tác vụ Build
-export const build = gulp.series(
-  gulp.parallel(html, copyPartials, styles, scripts, assets)
-);
+export const build = gulp.series(gulp.parallel(html, copyPartials, styles, scripts, assets));
 
 // Tác vụ Dev
 export const dev = gulp.series(build, watchFiles);
